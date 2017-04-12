@@ -1,0 +1,10 @@
+<resources>
+    <string name="facebook_app_id">402656026765583</string>
+    <string name="fb_login_protocol_scheme">fb402656026765583</string>
+
+    <string name="app_name">StudentLife</string>
+
+    <string name="login_activity_title">Login</string>
+
+    <string name="logout_button_label">Log out</string>
+</resources>
