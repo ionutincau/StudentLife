@@ -1,8 +1,12 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="MaterialDrawerTheme.Light">
 
+    </style>
+
+    <style name="noAnimationTheme" parent="AppTheme">
+        <item name="android:windowAnimationStyle">@null</item>
     </style>
 
 </resources>

@@ -15,6 +15,11 @@ import com.facebook.login.widget.LoginButton;
 import com.whiteshadow.studentlife.MainActivity;
 import com.whiteshadow.studentlife.R;
 
+/**
+ * Created by Incau Ionut on 12-Apr-17.
+ * Contact: ionut.incau@gmail.com
+ */
+
 public class LoginFragment extends Fragment{
 
     private CallbackManager callbackManager;
@@ -29,6 +34,9 @@ public class LoginFragment extends Fragment{
             public void onSuccess(LoginResult loginResult) {
                 //TODO: launch create account at first login
                 Intent intent = new Intent(getActivity(), MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
             }
 

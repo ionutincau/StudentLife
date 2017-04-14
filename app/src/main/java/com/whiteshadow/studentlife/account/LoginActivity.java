@@ -5,6 +5,11 @@ import android.os.Bundle;
 
 import com.whiteshadow.studentlife.R;
 
+/**
+ * Created by Incau Ionut on 12-Apr-17.
+ * Contact: ionut.incau@gmail.com
+ */
+
 public class LoginActivity extends Activity {
 
     @Override
