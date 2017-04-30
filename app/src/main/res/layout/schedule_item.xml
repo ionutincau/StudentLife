@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/hourStart"
+        android:layout_width="104dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/hourEnd"
+        android:layout_width="104dp"
+        android:layout_height="53dp"
+        android:ems="10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/hourStart" />
+
+    <TextView
+        android:id="@+id/room"
+        android:layout_width="104dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="0dp"
+        android:ems="10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hourEnd" />
+
+    <TextView
+        android:id="@+id/className"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:ems="10"
+        app:layout_constraintBottom_toBottomOf="@+id/hourEnd"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintTop_toTopOf="@+id/hourStart"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="0dp"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/hourStart"
+        android:layout_marginLeft="0dp" />
+
+    <TextView
+        android:id="@+id/teacherName"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:layout_marginTop="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/className"
+        app:layout_constraintBottom_toBottomOf="@+id/room"
+        android:layout_marginBottom="0dp"
+        android:layout_marginRight="0dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/room"
+        android:layout_marginLeft="0dp" />
+
+</android.support.constraint.ConstraintLayout>

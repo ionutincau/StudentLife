@@ -52,6 +52,7 @@ public class DrawerMenu {
         drawer = new DrawerBuilder()
                 .withActivity(activity)
                 .withToolbar(toolbar)
+                .withActionBarDrawerToggleAnimated(true)
                 .withAccountHeader(accountHeader)
                 .withSelectedItem(-1)
                 .addDrawerItems(
@@ -65,7 +66,11 @@ public class DrawerMenu {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         if (drawerItem == share_button) {
-
+                            // todo: temp
+                            Intent intent = new Intent(activity, com.whiteshadow.studentlife.schedule.ScheduleActivity.class);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            activity.startActivity(intent);
                         }
                         if (drawerItem == rate_button) {
 

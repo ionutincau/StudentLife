@@ -6,10 +6,17 @@
 
     <string name="login_activity_title">Login</string>
     <string name="main_activity_title">Home</string>
+    <string name="schedule_activity_title">Schedule</string>
 
     <string name="drawer_share">Share</string>
     <string name="rate_button">Rate</string>
     <string name="drawer_feedback">Send Feedback</string>
     <string name="drawer_settings">Settings</string>
     <string name="drawer_logout">Log out</string>
+
+    <string name="mo">L</string>
+    <string name="tu">M</string>
+    <string name="we">M</string>
+    <string name="th">J</string>
+    <string name="fr">V</string>
 </resources>
