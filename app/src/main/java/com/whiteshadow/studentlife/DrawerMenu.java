@@ -68,8 +68,6 @@ public class DrawerMenu {
                         if (drawerItem == share_button) {
                             // todo: temp
                             Intent intent = new Intent(activity, com.whiteshadow.studentlife.schedule.ScheduleActivity.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             activity.startActivity(intent);
                         }
                         if (drawerItem == rate_button) {

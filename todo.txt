@@ -1,0 +1,19 @@
+todo:
+	menu button in toolbar
+	drawer size and colors
+
+    facebook refresh token/profile traker
+    no internet or other errors
+
+    toolbar
+    schedule design
+    schedule buttons
+
+
+
+
+
+
+optional:
+	check dependencies
+	facebook acoount kit

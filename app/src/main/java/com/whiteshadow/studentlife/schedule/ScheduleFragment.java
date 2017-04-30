@@ -32,17 +32,6 @@ public class ScheduleFragment extends Fragment {
         DaoSession daoSession = ((App) getActivity().getApplication()).getDaoSession();
         ScheduleDao scheduleDao = daoSession.getScheduleDao();
 
-        Schedule sch = new Schedule();
-        sch.setDay(0);
-        sch.setHourStart("8:00");
-        sch.setHourEnd("20:00");
-        sch.setRoom("134");
-        sch.setTeacherName("Johnny");
-        scheduleDao.insert(sch);
-        Log.e("DaoExample", "Inserted new note, ID: " + sch.getId());
-        sch.setHourStart("12:00");
-        scheduleDao.update(sch);
-
         Schedule sch2 = new Schedule();
         sch2.setDay(5);
         sch2.setHourStart("10:00");
@@ -54,13 +43,11 @@ public class ScheduleFragment extends Fragment {
         QueryBuilder<Schedule> qb = scheduleDao.queryBuilder();
         qb.orderAsc(ScheduleDao.Properties.Day).build();
         List<Schedule> list = qb.list();
-        for (Schedule s : list) {
-            Log.e("DaoExample", "data obtained: " + s.getTeacherName());
-        }
 
         scheduleListView = (ListView) view.findViewById(R.id.listview_schedule);
         ScheduleAdapter scheduleAdapter = new ScheduleAdapter(getActivity(), R.layout.schedule_item, list);
         scheduleListView.setAdapter(scheduleAdapter);
+
         return view;
     }
 }
