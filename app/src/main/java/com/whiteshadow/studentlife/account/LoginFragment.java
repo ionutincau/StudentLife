@@ -1,11 +1,13 @@
 package com.whiteshadow.studentlife.account;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -14,6 +16,8 @@ import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.whiteshadow.studentlife.MainActivity;
 import com.whiteshadow.studentlife.R;
+
+import static com.facebook.FacebookSdk.getApplicationContext;
 
 /**
  * Created by Incau Ionut on 12-Apr-17.
@@ -42,12 +46,20 @@ public class LoginFragment extends Fragment{
 
             @Override
             public void onCancel() {
-
+                Context context = getApplicationContext();
+                CharSequence text = "Login canceled!\nLogin to continue";
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
             }
 
             @Override
             public void onError(FacebookException error) {
-
+                Context context = getApplicationContext();
+                CharSequence text = "Error connecting with Facebook!\nCheck internet connection";
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
             }
         };
     }

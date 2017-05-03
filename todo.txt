@@ -1,13 +1,14 @@
 todo:
-	menu button in toolbar
+	menu button color
 	drawer size and colors
+	drawer under statusbar after launching schedule
 
-    facebook refresh token/profile traker
-    no internet or other errors
+  facebook refresh token/profile traker
+  no internet or other errors
 
-    toolbar
-    schedule design
-    schedule buttons
+  toolbar
+  schedule design
+  schedule buttons
 
 
 

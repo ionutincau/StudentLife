@@ -86,6 +86,7 @@ public class DrawerMenu {
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             activity.startActivity(intent);
                         }
+                        drawer.closeDrawer();
                         return true;
                     }
                 })

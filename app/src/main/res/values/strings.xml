@@ -5,7 +5,7 @@
     <string name="app_name">StudentLife</string>
 
     <string name="login_activity_title">Login</string>
-    <string name="main_activity_title">Home</string>
+    <string name="main_activity_title">Student Life</string>
     <string name="schedule_activity_title">Schedule</string>
 
     <string name="drawer_share">Share</string>
