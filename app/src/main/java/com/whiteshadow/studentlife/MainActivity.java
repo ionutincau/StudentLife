@@ -1,16 +1,11 @@
 package com.whiteshadow.studentlife;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 
 import com.facebook.Profile;
-import com.mikepenz.fontawesome_typeface_library.FontAwesome;
-import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.materialdrawer.Drawer;
 
 /**
@@ -44,15 +39,9 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
         }
 
-        Drawable menu_icon = new IconicsDrawable(this)
-                .icon(FontAwesome.Icon.faw_bars)
-                .color(Color.WHITE)
-                .sizeDp(48);
         toolbar = (Toolbar) findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(menu_icon);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
     }
 
     @Override

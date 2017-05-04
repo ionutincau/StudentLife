@@ -1,4 +1,4 @@
-package com.whiteshadow.studentlife.schedule;
+package com.whiteshadow.studentlife.domain;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Id;

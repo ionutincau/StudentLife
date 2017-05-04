@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +20,7 @@ import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
+import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
 /**
  * Created by Incau Ionut on 13-Apr-17.
@@ -36,6 +38,7 @@ public class DrawerMenu {
     public static Drawer addDrawer(final Activity activity, Toolbar toolbar) {
         profile = Profile.getCurrentProfile();
         drawerProfile = new ProfileDrawerItem().withName(profile.getName()).withIcon(profile_picture);
+
         final PrimaryDrawerItem share_button = new PrimaryDrawerItem().withIdentifier(1).withName(R.string.drawer_share);
         final PrimaryDrawerItem rate_button = new PrimaryDrawerItem().withIdentifier(2).withName(R.string.rate_button);
         final PrimaryDrawerItem feedback_button = new PrimaryDrawerItem().withIdentifier(3).withName(R.string.drawer_feedback);
@@ -47,12 +50,31 @@ public class DrawerMenu {
                 .withActivity(activity)
                 .withHeaderBackground(R.drawable.profile_background)
                 .addProfiles(drawerProfile)
+                .withOnAccountHeaderProfileImageListener(new AccountHeader.OnAccountHeaderProfileImageListener() {
+                    @Override
+                    public boolean onProfileImageClick(View view, IProfile profile, boolean current) {
+                        Intent intent = new Intent(activity, com.whiteshadow.studentlife.account.ShowAccountActivity.class);
+                        activity.startActivity(intent);
+                        drawer.closeDrawer();
+                        return true;
+                    }
+
+                    @Override
+                    public boolean onProfileImageLongClick(View view, IProfile profile, boolean current) {
+                        Intent intent = new Intent(activity, com.whiteshadow.studentlife.account.ShowAccountActivity.class);
+                        activity.startActivity(intent);
+                        drawer.closeDrawer();
+                        return true;
+                    }
+                })
                 .build();
 
         drawer = new DrawerBuilder()
                 .withActivity(activity)
                 .withToolbar(toolbar)
+                .withActionBarDrawerToggle(true)
                 .withActionBarDrawerToggleAnimated(true)
+                .withDisplayBelowStatusBar(true)
                 .withAccountHeader(accountHeader)
                 .withSelectedItem(-1)
                 .addDrawerItems(
@@ -92,6 +114,8 @@ public class DrawerMenu {
                 })
                 .build();
 
+        drawer.getActionBarDrawerToggle().getDrawerArrowDrawable().setColor(ContextCompat.getColor(activity, R.color.colorWhite));
+
         if (profile_picture == null) loadProfilePicture(activity);
 
         return drawer;
@@ -106,7 +130,7 @@ public class DrawerMenu {
                             with(activity).
                             load(profile.getProfilePictureUri(100, 100)).
                             asBitmap().
-                            into(-1,-1).
+                            into(-1, -1).
                             get();
                 }
                 catch (Exception e) {

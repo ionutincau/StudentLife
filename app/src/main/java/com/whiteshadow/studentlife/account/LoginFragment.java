@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +13,19 @@ import android.widget.Toast;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.Profile;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.whiteshadow.studentlife.App;
 import com.whiteshadow.studentlife.MainActivity;
 import com.whiteshadow.studentlife.R;
+import com.whiteshadow.studentlife.domain.DaoSession;
+import com.whiteshadow.studentlife.domain.Student;
+import com.whiteshadow.studentlife.domain.StudentDao;
+
+import org.greenrobot.greendao.query.QueryBuilder;
+
+import java.util.List;
 
 import static com.facebook.FacebookSdk.getApplicationContext;
 
@@ -36,12 +46,17 @@ public class LoginFragment extends Fragment{
         facebookCallback = new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                //TODO: launch create account at first login
-                Intent intent = new Intent(getActivity(), MainActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                startActivity(intent);
+                boolean accountExist = getAccount();
+                if (accountExist) {
+                    Intent intent = new Intent(getActivity(), MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(getActivity(), CreateAccountActivity.class);
+                    startActivity(intent);
+                }
             }
 
             @Override
@@ -80,5 +95,20 @@ public class LoginFragment extends Fragment{
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
+    }
+
+    /**
+     * check database for user account
+     * if there is no account means that user login for first time
+     */
+    private boolean getAccount() {
+        DaoSession daoSession = ((App) getActivity().getApplication()).getDaoSession();
+        StudentDao studentDao = daoSession.getStudentDao();
+        List<Student> list = studentDao.loadAll();
+        String id = Profile.getCurrentProfile().getId();
+        for (Student s : list) {
+            if (s.getFacebookId().equals(id)) return true;
+        }
+        return false;
     }
 }

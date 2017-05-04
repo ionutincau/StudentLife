@@ -1,20 +1,31 @@
 todo:
-	menu button color
-	drawer size and colors
-	drawer under statusbar after launching schedule
 
-  facebook refresh token/profile traker
+  activity transitions
   no internet or other errors
 
-  toolbar
-  schedule design
-  schedule buttons
+	drawer:
+		drawer size and colors
+		drawer under statusbar after launching schedule
 
+  schedule:
+  	schedule design
+  	schedule buttons
+  	buttons margin top on landscape
 
+  login:
+  	statusbar
+    background
 
+  show_profile:
+    round image
 
+  editprofile:
+    check
 
 
 optional:
 	check dependencies
 	facebook acoount kit
+  facebook refresh token/profile traker
+  multiple users
+  multiple college

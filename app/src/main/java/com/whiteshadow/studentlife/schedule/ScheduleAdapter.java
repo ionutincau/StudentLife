@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.whiteshadow.studentlife.R;
+import com.whiteshadow.studentlife.domain.Schedule;
 
 import java.util.List;
 

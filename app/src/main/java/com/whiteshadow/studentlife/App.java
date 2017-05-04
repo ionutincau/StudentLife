@@ -2,8 +2,8 @@ package com.whiteshadow.studentlife;
 
 import android.app.Application;
 
-import com.whiteshadow.studentlife.schedule.DaoMaster;
-import com.whiteshadow.studentlife.schedule.DaoSession;
+import com.whiteshadow.studentlife.domain.DaoMaster;
+import com.whiteshadow.studentlife.domain.DaoSession;
 
 import org.greenrobot.greendao.database.Database;
 

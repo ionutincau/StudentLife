@@ -3,18 +3,14 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="MaterialDrawerTheme.Light">
         <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:windowTranslucentNavigation">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
     <style name="ActivityTheme" parent="MaterialDrawerTheme.Light">
         <item name="android:statusBarColor">@color/primary_dark</item>
-    </style>
-
-    <style name="noAnimationTheme" parent="AppTheme">
-        <item name="android:windowAnimationStyle">@null</item>
     </style>
 
 </resources>

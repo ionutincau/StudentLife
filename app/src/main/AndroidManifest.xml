@@ -32,6 +32,14 @@
             android:theme="@style/noAnimationTheme">
         </activity>
         <activity
+            android:name=".account.CreateAccountActivity"
+            android:label="@string/create_account_activity_title">
+        </activity>
+        <activity
+            android:name=".account.ShowAccountActivity"
+            android:label="@string/account_activity_title">
+        </activity>
+        <activity
             android:name=".schedule.ScheduleActivity"
             android:label="@string/schedule_activity_title"
             android:theme="@style/ActivityTheme">

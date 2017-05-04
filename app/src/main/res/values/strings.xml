@@ -6,14 +6,28 @@
 
     <string name="login_activity_title">Login</string>
     <string name="main_activity_title">Student Life</string>
-    <string name="schedule_activity_title">Schedule</string>
-
     <string name="drawer_share">Share</string>
     <string name="rate_button">Rate</string>
     <string name="drawer_feedback">Send Feedback</string>
     <string name="drawer_settings">Settings</string>
     <string name="drawer_logout">Log out</string>
 
+    <string name="create_account_activity_title">Create Account</string>
+    <string name="account_activity_title">Account</string>
+    <string name="create_account_info">Write the username and password you got from your university to get access to your personal data</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="university">University</string>
+    <string name="faculty">Faculty</string>
+    <string name="continueButton">Continue</string>
+    <string name="changeButton">Change</string>
+    <string name="saveButton">Save</string>
+
+    <string name="schedule_activity_title">Schedule</string>
     <string name="mo">L</string>
     <string name="tu">M</string>
     <string name="we">M</string>

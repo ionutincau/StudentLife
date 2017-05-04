@@ -1,11 +1,8 @@
 package com.whiteshadow.studentlife.schedule;
 
 import android.app.Fragment;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +11,9 @@ import android.widget.ListView;
 
 import com.whiteshadow.studentlife.App;
 import com.whiteshadow.studentlife.R;
+import com.whiteshadow.studentlife.domain.DaoSession;
+import com.whiteshadow.studentlife.domain.Schedule;
+import com.whiteshadow.studentlife.domain.ScheduleDao;
 
 import org.greenrobot.greendao.query.QueryBuilder;
 
