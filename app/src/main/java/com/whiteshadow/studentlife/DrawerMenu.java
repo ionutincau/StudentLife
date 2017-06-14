@@ -19,6 +19,7 @@ import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
+import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
@@ -41,6 +42,8 @@ public class DrawerMenu {
         profile = Profile.getCurrentProfile();
         drawerProfile = new ProfileDrawerItem().withName(profile.getName()).withIcon(profile_picture);
 
+        final PrimaryDrawerItem schedule_button = new PrimaryDrawerItem().withIdentifier(1).withName(R.string.schedule_activity_title);
+        final PrimaryDrawerItem grade_button = new PrimaryDrawerItem().withIdentifier(1).withName(R.string.grade_activity_title);
         final PrimaryDrawerItem share_button = new PrimaryDrawerItem().withIdentifier(1).withName(R.string.drawer_share);
         final PrimaryDrawerItem rate_button = new PrimaryDrawerItem().withIdentifier(2).withName(R.string.rate_button);
         final PrimaryDrawerItem feedback_button = new PrimaryDrawerItem().withIdentifier(3).withName(R.string.drawer_feedback);
@@ -80,6 +83,9 @@ public class DrawerMenu {
                 .withAccountHeader(accountHeader)
                 .withSelectedItem(-1)
                 .addDrawerItems(
+                        schedule_button.withIcon(FontAwesome.Icon.faw_calendar),
+                        grade_button.withIcon(FontAwesome.Icon.faw_thumbs_up),
+                        new DividerDrawerItem(),
                         share_button.withIcon(FontAwesome.Icon.faw_share_alt),
                         rate_button.withIcon(FontAwesome.Icon.faw_star),
                         feedback_button.withIcon(FontAwesome.Icon.faw_envelope),
@@ -89,6 +95,14 @@ public class DrawerMenu {
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
+                        if (drawerItem == schedule_button) {
+                            Intent intent = new Intent(activity, com.whiteshadow.studentlife.schedule.ScheduleActivity.class);
+                            activity.startActivity(intent);
+                        }
+                        if (drawerItem == grade_button) {
+                            Intent intent = new Intent(activity, com.whiteshadow.studentlife.grades.GradeActivity.class);
+                            activity.startActivity(intent);
+                        }
                         if (drawerItem == share_button) {
                             Intent sendIntent = new Intent();
                             sendIntent.setAction(Intent.ACTION_SEND);
@@ -110,14 +124,10 @@ public class DrawerMenu {
                             }
                         }
                         if (drawerItem == settings_button) {
-                            // todo: temp
-                            Intent intent = new Intent(activity, com.whiteshadow.studentlife.grades.GradeActivity.class);
-                            activity.startActivity(intent);
+
                         }
                         if (drawerItem == feedback_button) {
-                            // todo: temp
-                            Intent intent = new Intent(activity, com.whiteshadow.studentlife.schedule.ScheduleActivity.class);
-                            activity.startActivity(intent);
+
                         }
                         else if (drawerItem == logout_button) {
                             LoginManager.getInstance().logOut();
