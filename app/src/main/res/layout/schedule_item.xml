@@ -1,60 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/hourStart"
-        android:layout_width="104dp"
-        android:layout_height="53dp"
+        android:id="@+id/hour"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
         android:layout_marginTop="16dp"
         android:background="@color/colorWhite"
         android:ems="10"
         android:gravity="center_vertical|center"
-        android:text="00:00"
+        android:text="00:00 - 00:00"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="0dp"
-        android:layout_marginStart="0dp"/>
-
-    <TextView
-        android:id="@+id/hourEnd"
-        android:layout_width="104dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="0dp"
-        android:background="@color/colorWhite"
-        android:ems="10"
-        android:gravity="center"
-        android:text="00:00"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hourStart" />
-
-    <TextView
-        android:id="@+id/room"
-        android:layout_width="104dp"
-        android:layout_height="34dp"
-        android:layout_marginTop="0dp"
-        android:background="@color/colorWhite"
-        android:ems="10"
-        android:gravity="center"
-        android:text="room"
-        android:textAlignment="center"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/hourEnd" />
+        app:layout_constraintHorizontal_bias="0.0" />
 
     <TextView
         android:id="@+id/className"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"
         android:layout_marginTop="0dp"
@@ -64,29 +38,68 @@
         android:paddingBottom="8dp"
         android:paddingTop="8dp"
         android:text="Class Name"
+        android:textAlignment="center"
         android:textIsSelectable="false"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/hourEnd"
-        app:layout_constraintLeft_toRightOf="@+id/hourStart"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/hourStart"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/hour"
+        app:layout_constraintHorizontal_bias="0.0" />
 
     <TextView
         android:id="@+id/teacherName"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="0dp"
+        android:layout_height="36dp"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"
         android:layout_marginTop="0dp"
+        android:paddingStart="24dp"
+        android:paddingLeft="24dp"
         android:background="@color/colorWhite"
         android:ems="10"
         android:gravity="start|center"
         android:text="Teacher Name"
-        app:layout_constraintBottom_toBottomOf="@+id/room"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/className"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <TextView
+        android:id="@+id/room"
+        android:layout_width="104dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:paddingStart="24dp"
+        android:paddingLeft="24dp"
+        android:background="@color/colorWhite"
+        android:ems="10"
+        android:gravity="start|center"
+        android:text="room"
+        android:textAlignment="viewStart"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacherName" />
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorWhite"
+        android:ems="10"
+        android:gravity="center|end"
+        android:paddingStart="0dp"
+        android:paddingEnd="24dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="24dp"
+        android:text="Type"
+        android:textAlignment="textEnd"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toRightOf="@+id/room"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/className" />
+        app:layout_constraintTop_toBottomOf="@+id/teacherName" />
 
 </android.support.constraint.ConstraintLayout>

@@ -20,18 +20,18 @@ import java.util.List;
 public class ScheduleAdapter extends ArrayAdapter {
 
     public static class ViewHolder {
-        public final TextView hourStart;
-        public final TextView hourEnd;
+        public final TextView hour;
         public final TextView room;
         public final TextView className;
         public final TextView teacherName;
+        public final TextView type;
 
         public ViewHolder(View view) {
-            hourStart = (TextView) view.findViewById(R.id.hourStart);
-            hourEnd = (TextView) view.findViewById(R.id.hourEnd);
+            hour = (TextView) view.findViewById(R.id.hour);
             room = (TextView) view.findViewById(R.id.room);
             className = (TextView) view.findViewById(R.id.className);
             teacherName = (TextView) view.findViewById(R.id.teacherName);
+            type = (TextView) view.findViewById(R.id.type);
         }
     }
 
@@ -54,11 +54,11 @@ public class ScheduleAdapter extends ArrayAdapter {
             holder = (ViewHolder) view.getTag();
         }
 
-        holder.hourStart.setText(schedule.getHourStart());
-        holder.hourEnd.setText(schedule.getHourEnd());
+        holder.hour.setText(schedule.getHourStart() + " - " + schedule.getHourEnd());
         holder.room.setText(schedule.getRoom());
         holder.className.setText(schedule.getClassName());
         holder.teacherName.setText(schedule.getTeacherName());
+        holder.type.setText(schedule.getType());
 
         return view;
     }

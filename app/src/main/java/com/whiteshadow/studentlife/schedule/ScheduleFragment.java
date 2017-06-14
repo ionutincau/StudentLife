@@ -3,6 +3,7 @@ package com.whiteshadow.studentlife.schedule;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,15 +33,13 @@ public class ScheduleFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_schedule, container, false);
-
+        scheduleListView = (ListView) view.findViewById(R.id.listview_schedule);
         setButtons(view);
-        test(view);
-
         return view;
     }
 
     private void setButtons(View view) {
-        buttons = new ArrayList<>();
+        buttons = new ArrayList();
         final Button moButton = (Button) view.findViewById(R.id.moButton);
         buttons.add(moButton);
         final Button tuButton = (Button) view.findViewById(R.id.tuButton);
@@ -72,27 +71,12 @@ public class ScheduleFragment extends Fragment {
         button.setTag(1);
         button.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.accent));
         button.setTextColor(ContextCompat.getColor(getActivity(), R.color.colorWhite));
+
+        loadSchedule(buttons.indexOf(button) + 1);
     }
 
-    private void test(View view) {
-
-        //// TODO: 30-Apr-17 remove temp
-        DaoSession daoSession = ((App) getActivity().getApplication()).getDaoSession();
-        ScheduleDao scheduleDao = daoSession.getScheduleDao();
-
-        Schedule sch2 = new Schedule();
-        sch2.setDay(5);
-        sch2.setHourStart("10:00");
-        sch2.setHourEnd("2:00");
-        sch2.setRoom("134");
-        sch2.setTeacherName("Johnny2");
-        scheduleDao.insert(sch2);
-
-        QueryBuilder<Schedule> qb = scheduleDao.queryBuilder();
-        qb.orderAsc(ScheduleDao.Properties.Day).build();
-        List<Schedule> list = qb.list();
-
-        scheduleListView = (ListView) view.findViewById(R.id.listview_schedule);
+    private void loadSchedule(int day) {
+        List<Schedule> list = ScheduleProvider.getInstance(getActivity()).getDaySchedule(day);
         ScheduleAdapter scheduleAdapter = new ScheduleAdapter(getActivity(), R.layout.schedule_item, list);
         scheduleListView.setAdapter(scheduleAdapter);
     }

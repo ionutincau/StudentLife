@@ -21,9 +21,10 @@ public class Schedule {
     private String room;
     private String className;
     private String teacherName;
+    private String type;
 
-    @Generated(hash = 1079008638)
-    public Schedule(Long id, int day, String hourStart, String hourEnd, String room, String className, String teacherName) {
+    @Generated(hash = 562618825)
+    public Schedule(Long id, int day, String hourStart, String hourEnd, String room, String className, String teacherName, String type) {
         this.id = id;
         this.day = day;
         this.hourStart = hourStart;
@@ -31,11 +32,11 @@ public class Schedule {
         this.room = room;
         this.className = className;
         this.teacherName = teacherName;
+        this.type = type;
     }
 
     @Generated(hash = 729319394)
     public Schedule() {
-
     }
 
     public Long getId() {
@@ -92,5 +93,13 @@ public class Schedule {
 
     public void setTeacherName(String teacherName) {
         this.teacherName = teacherName;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
