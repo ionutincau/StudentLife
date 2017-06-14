@@ -16,9 +16,12 @@ import com.whiteshadow.studentlife.App;
 import com.whiteshadow.studentlife.MainActivity;
 import com.whiteshadow.studentlife.R;
 import com.whiteshadow.studentlife.domain.DaoSession;
+import com.whiteshadow.studentlife.domain.Grade;
+import com.whiteshadow.studentlife.domain.GradeDao;
 import com.whiteshadow.studentlife.domain.ScheduleDao;
 import com.whiteshadow.studentlife.domain.Student;
 import com.whiteshadow.studentlife.domain.StudentDao;
+import com.whiteshadow.studentlife.grades.GradeProvider;
 import com.whiteshadow.studentlife.schedule.ScheduleProvider;
 
 import static com.facebook.FacebookSdk.getApplicationContext;
@@ -86,7 +89,11 @@ public class CreateAccountFragment extends Fragment {
 
     private void createDummyData() {
         DaoSession daoSession = ((App) getActivity().getApplication()).getDaoSession();
+
         ScheduleDao scheduleDao = daoSession.getScheduleDao();
         ScheduleProvider.getInstance().addDummyData(scheduleDao);
+
+        GradeDao gradeDao = daoSession.getGradeDao();
+        GradeProvider.getInstance().addDummyData(gradeDao);
     }
 }

@@ -110,7 +110,9 @@ public class DrawerMenu {
                             }
                         }
                         if (drawerItem == settings_button) {
-
+                            // todo: temp
+                            Intent intent = new Intent(activity, com.whiteshadow.studentlife.grades.GradeActivity.class);
+                            activity.startActivity(intent);
                         }
                         if (drawerItem == feedback_button) {
                             // todo: temp

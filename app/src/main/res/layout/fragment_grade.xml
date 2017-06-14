@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/grade_toolbar_holder"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/Button1"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="@color/colorWhite"
+        android:text="@string/one"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/Button2"
+        app:layout_constraintTop_toBottomOf="@+id/grade_toolbar_holder" />
+
+    <Button
+        android:id="@+id/Button2"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="@color/colorWhite"
+        android:text="@string/two"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/Button1"
+        app:layout_constraintRight_toLeftOf="@+id/Button3"
+        app:layout_constraintTop_toBottomOf="@+id/grade_toolbar_holder" />
+
+    <Button
+        android:id="@+id/Button3"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="@color/colorWhite"
+        android:text="@string/tree"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/Button2"
+        app:layout_constraintRight_toLeftOf="@+id/Button4"
+        app:layout_constraintTop_toBottomOf="@+id/grade_toolbar_holder" />
+
+    <Button
+        android:id="@+id/Button4"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="@color/colorWhite"
+        android:text="@string/four"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/Button3"
+        app:layout_constraintRight_toLeftOf="@+id/Button5"
+        app:layout_constraintTop_toBottomOf="@+id/grade_toolbar_holder" />
+
+    <Button
+        android:id="@+id/Button5"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="@color/colorWhite"
+        android:text="@string/five"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/Button4"
+        app:layout_constraintRight_toLeftOf="@+id/Button6"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grade_toolbar_holder" />
+
+    <Button
+        android:id="@+id/Button6"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:background="@color/colorWhite"
+        android:text="@string/six"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/Button5"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/grade_toolbar_holder" />
+
+    <ListView
+        android:id="@+id/listview_grade"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Button1"
+        app:layout_constraintVertical_bias="0.0" />
+
+</android.support.constraint.ConstraintLayout>
