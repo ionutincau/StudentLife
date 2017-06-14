@@ -1,8 +1,10 @@
 package com.whiteshadow.studentlife;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
@@ -88,18 +90,32 @@ public class DrawerMenu {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         if (drawerItem == share_button) {
-                            // todo: temp
-                            Intent intent = new Intent(activity, com.whiteshadow.studentlife.schedule.ScheduleActivity.class);
-                            activity.startActivity(intent);
+                            Intent sendIntent = new Intent();
+                            sendIntent.setAction(Intent.ACTION_SEND);
+                            sendIntent.putExtra(Intent.EXTRA_TEXT, "Hey check out my student app: https://play.google.com/store/apps/details?id=com.google.android.stardroid");
+                            sendIntent.setType("text/plain");
+                            activity.startActivity(sendIntent);
                         }
                         if (drawerItem == rate_button) {
-
+                            try {
+                                Uri uri = Uri.parse("market://details?id=com.google.android.stardroid");
+                                Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+                                goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_DOCUMENT | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+                                activity.startActivity(goToMarket);
+                            }
+                            catch (ActivityNotFoundException e) {
+                                Uri uri = Uri.parse("http://play.google.com/store/apps/details?id=com.google.android.stardroid");
+                                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                                activity.startActivity(intent);
+                            }
                         }
                         if (drawerItem == settings_button) {
 
                         }
                         if (drawerItem == feedback_button) {
-
+                            // todo: temp
+                            Intent intent = new Intent(activity, com.whiteshadow.studentlife.schedule.ScheduleActivity.class);
+                            activity.startActivity(intent);
                         }
                         else if (drawerItem == logout_button) {
                             LoginManager.getInstance().logOut();

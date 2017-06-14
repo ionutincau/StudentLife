@@ -19,6 +19,8 @@ import com.whiteshadow.studentlife.domain.ScheduleDao;
 import org.greenrobot.greendao.query.QueryBuilder;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 /**
@@ -51,7 +53,14 @@ public class ScheduleFragment extends Fragment {
         final Button frButton = (Button) view.findViewById(R.id.frButton);
         buttons.add(frButton);
 
-        setActive(moButton);
+        Calendar calendar = GregorianCalendar.getInstance();
+        int day = calendar.get(Calendar.DAY_OF_WEEK);
+        if (day == 7 || day == 1) {// for weekend show schedule for monday
+            setActive(moButton);
+        }
+        else {
+            setActive(buttons.get(day - 2));
+        }
         for (Button b : buttons) {
             b.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -76,7 +85,7 @@ public class ScheduleFragment extends Fragment {
     }
 
     private void loadSchedule(int day) {
-        List<Schedule> list = ScheduleProvider.getInstance(getActivity()).getDaySchedule(day);
+        List<Schedule> list = ScheduleProvider.getInstance().getDaySchedule(getActivity(), day);
         ScheduleAdapter scheduleAdapter = new ScheduleAdapter(getActivity(), R.layout.schedule_item, list);
         scheduleListView.setAdapter(scheduleAdapter);
     }

@@ -16,25 +16,20 @@ import java.util.List;
 
 public class ScheduleProvider {
     private static ScheduleProvider instance;
-    private Activity activity;
 
     private ScheduleProvider() {
 
     }
 
-    public static ScheduleProvider getInstance(Activity activity) {
+    public static ScheduleProvider getInstance() {
         if (instance == null) {
             instance = new ScheduleProvider();
-            DaoSession daoSession = ((App) activity.getApplication()).getDaoSession();
-            ScheduleDao scheduleDao = daoSession.getScheduleDao();
-            if (scheduleDao.queryBuilder().orderAsc(ScheduleDao.Properties.Day).list().isEmpty()); instance.addDummyData(scheduleDao);
         }
-        instance.activity = activity;
         return instance;
     }
 
-    public List<Schedule> getDaySchedule(int day) {
-        DaoSession daoSession = ((App) this.activity.getApplication()).getDaoSession();
+    public List<Schedule> getDaySchedule(Activity activity, int day) {
+        DaoSession daoSession = ((App) activity.getApplication()).getDaoSession();
         ScheduleDao scheduleDao = daoSession.getScheduleDao();
         List<Schedule> list = scheduleDao.queryBuilder().where(ScheduleDao.Properties.Day.eq(day)).list();
         return list;
@@ -45,7 +40,6 @@ public class ScheduleProvider {
         addSchedule(scheduleDao, 1, "10:00", "12:00", "C512", "Seminar", "Inteligenta artificiala", "Drd. ENESCU Alina");
         addSchedule(scheduleDao, 1, "12:00", "14:00", "L336", "Laborator", "Proiect colectiv", "Asist. COROIU Adriana");
         addSchedule(scheduleDao, 1, "14:00", "16:00", "L339", "Laborator", "Retele de calculatoare", "Lect. DRAGOS Radu");
-        addSchedule(scheduleDao, 1, "14:00", "16:00", "L343", "Laborator", "Retele de calculatoare", "C.d.asociat SOTROPA Aurelian");
         addSchedule(scheduleDao, 1, "16:00", "18:00", "L301", "Laborator", "Ingineria sistemelor soft", "Drd. Sima Ioan");
         addSchedule(scheduleDao, 2, "10:00", "12:00", "L002", "Laborator", "Inteligenta artificiala", "Drd. ENESCU Alina");
         addSchedule(scheduleDao, 2, "14:00", "16:00", "6/II", "Curs", "Managementul clasei de elevi", "Conf. VALCAN Dumitru");
