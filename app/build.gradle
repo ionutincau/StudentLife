@@ -56,3 +56,5 @@ dependencies {
     compile 'com.android.support:support-v4:25.0.2'
     compile 'org.greenrobot:greendao:3.2.2'
 }
+
+apply plugin: 'com.google.gms.google-services'

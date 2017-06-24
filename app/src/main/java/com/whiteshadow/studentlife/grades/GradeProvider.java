@@ -76,16 +76,16 @@ public class GradeProvider {
         addGrade(gradeDao, 5, "Software matematic", 10, 4);
         addGrade(gradeDao, 5, "Statistică matematică", 7, 5);
 
-        addGrade(gradeDao, 6, "Elaborarea lucrării de licență", 0, 2);
+        addGrade(gradeDao, 6, "Elaborarea lucrării de licență", 10, 2);
         addGrade(gradeDao, 6, "Ingineria sistemelor soft", 8, 6);
         addGrade(gradeDao, 6, "Inteligență artificială", 7, 6);
-        addGrade(gradeDao, 6, "Istoria informatici", 0, 3);
-        addGrade(gradeDao, 6, "Proiect colectiv", 0, 3);
+        addGrade(gradeDao, 6, "Istoria informatici", 10, 3);
+        addGrade(gradeDao, 6, "Proiect colectiv", 10, 3);
         addGrade(gradeDao, 6, "Rețele de calculatoare", 9, 5);
         addGrade(gradeDao, 6, "Tehnici de optimizare",	5, 5);
     }
 
-    private void addGrade(GradeDao gradeDao, int semester, String courseName, int number, int credits) {
+    public void addGrade(GradeDao gradeDao, int semester, String courseName, int number, int credits) {
         Grade grade = new Grade();
         grade.setSemester(semester);
         grade.setCourseName(courseName);

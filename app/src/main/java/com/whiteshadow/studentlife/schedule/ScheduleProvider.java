@@ -54,7 +54,7 @@ public class ScheduleProvider {
         addSchedule(scheduleDao, 5, "14:00", "16:00", "A2", "Curs", "Ingineria sistemelor soft", "Conf. CHIOREAN Dan");
     }
 
-    private void addSchedule(ScheduleDao scheduleDao, int day, String hourStart,  String hourEnd, String room, String type, String className, String teacherName) {
+    public void addSchedule(ScheduleDao scheduleDao, int day, String hourStart, String hourEnd, String room, String type, String className, String teacherName) {
         Schedule schedule = new Schedule();
         schedule.setDay(day);
         schedule.setHourStart(hourStart);

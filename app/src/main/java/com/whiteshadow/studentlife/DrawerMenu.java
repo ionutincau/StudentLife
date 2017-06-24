@@ -43,12 +43,12 @@ public class DrawerMenu {
         drawerProfile = new ProfileDrawerItem().withName(profile.getName()).withIcon(profile_picture);
 
         final PrimaryDrawerItem schedule_button = new PrimaryDrawerItem().withIdentifier(1).withName(R.string.schedule_activity_title);
-        final PrimaryDrawerItem grade_button = new PrimaryDrawerItem().withIdentifier(1).withName(R.string.grade_activity_title);
-        final PrimaryDrawerItem share_button = new PrimaryDrawerItem().withIdentifier(1).withName(R.string.drawer_share);
-        final PrimaryDrawerItem rate_button = new PrimaryDrawerItem().withIdentifier(2).withName(R.string.rate_button);
-        final PrimaryDrawerItem feedback_button = new PrimaryDrawerItem().withIdentifier(3).withName(R.string.drawer_feedback);
-        final PrimaryDrawerItem settings_button = new PrimaryDrawerItem().withIdentifier(4).withName(R.string.drawer_settings);
-        final PrimaryDrawerItem logout_button = new PrimaryDrawerItem().withIdentifier(5).withName(R.string.drawer_logout);
+        final PrimaryDrawerItem grade_button = new PrimaryDrawerItem().withIdentifier(2).withName(R.string.grade_activity_title);
+        final PrimaryDrawerItem share_button = new PrimaryDrawerItem().withIdentifier(3).withName(R.string.drawer_share);
+        final PrimaryDrawerItem rate_button = new PrimaryDrawerItem().withIdentifier(4).withName(R.string.rate_button);
+        final PrimaryDrawerItem feedback_button = new PrimaryDrawerItem().withIdentifier(5).withName(R.string.drawer_feedback);
+        final PrimaryDrawerItem settings_button = new PrimaryDrawerItem().withIdentifier(6).withName(R.string.drawer_settings);
+        final PrimaryDrawerItem logout_button = new PrimaryDrawerItem().withIdentifier(7).withName(R.string.drawer_logout);
 
         accountHeader = new AccountHeaderBuilder()
                 .withSelectionListEnabled(false)

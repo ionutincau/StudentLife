@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "756923323578",
+    "firebase_url": "https://student-life-c1ae1.firebaseio.com",
+    "project_id": "student-life-c1ae1",
+    "storage_bucket": "student-life-c1ae1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756923323578:android:44d8b440192defcf",
+        "android_client_info": {
+          "package_name": "com.whiteshadow.studentlife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "756923323578-099ij5qcndhfpua8gtencc1hed62sgt4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMX8PKPz3NRgZHqD8bQ85E5GgR2ljfSgI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
