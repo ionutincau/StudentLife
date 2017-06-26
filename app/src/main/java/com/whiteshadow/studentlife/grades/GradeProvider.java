@@ -45,7 +45,7 @@ public class GradeProvider {
         addGrade(gradeDao, 1, "Logică matematică", 6, 6);
 
         addGrade(gradeDao, 2, "Algebra 2 - Structuri algebrice de bază", 6, 5);
-        addGrade(gradeDao, 2, "Analiză matematică 2 - Calcul diferenţial în Rn", 3, 5);
+        addGrade(gradeDao, 2, "Analiză matematică 2 - Calcul diferenţial în Rn", 5, 5);
         addGrade(gradeDao, 2, "Educaţie fizică 2", 10, 0);
         addGrade(gradeDao, 2, "Geometrie 2 - Geometrie afină", 6, 5);
         addGrade(gradeDao, 2, "Programare orientată obiect", 10, 5);
