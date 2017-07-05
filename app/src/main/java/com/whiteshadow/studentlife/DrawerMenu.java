@@ -44,11 +44,13 @@ public class DrawerMenu {
 
         final PrimaryDrawerItem schedule_button = new PrimaryDrawerItem().withIdentifier(1).withName(R.string.schedule_activity_title);
         final PrimaryDrawerItem grade_button = new PrimaryDrawerItem().withIdentifier(2).withName(R.string.grade_activity_title);
-        final PrimaryDrawerItem share_button = new PrimaryDrawerItem().withIdentifier(3).withName(R.string.drawer_share);
-        final PrimaryDrawerItem rate_button = new PrimaryDrawerItem().withIdentifier(4).withName(R.string.rate_button);
+        final PrimaryDrawerItem attendances_button = new PrimaryDrawerItem().withIdentifier(3).withName(R.string.drawer_attendances);
+        final PrimaryDrawerItem check_button = new PrimaryDrawerItem().withIdentifier(4).withName(R.string.drawer_check);
         final PrimaryDrawerItem feedback_button = new PrimaryDrawerItem().withIdentifier(5).withName(R.string.drawer_feedback);
-        final PrimaryDrawerItem settings_button = new PrimaryDrawerItem().withIdentifier(6).withName(R.string.drawer_settings);
-        final PrimaryDrawerItem logout_button = new PrimaryDrawerItem().withIdentifier(7).withName(R.string.drawer_logout);
+        final PrimaryDrawerItem share_button = new PrimaryDrawerItem().withIdentifier(6).withName(R.string.drawer_share);
+        final PrimaryDrawerItem rate_button = new PrimaryDrawerItem().withIdentifier(7).withName(R.string.rate_button);
+        final PrimaryDrawerItem settings_button = new PrimaryDrawerItem().withIdentifier(8).withName(R.string.drawer_settings);
+        final PrimaryDrawerItem logout_button = new PrimaryDrawerItem().withIdentifier(9).withName(R.string.drawer_logout);
 
         accountHeader = new AccountHeaderBuilder()
                 .withSelectionListEnabled(false)
@@ -85,10 +87,12 @@ public class DrawerMenu {
                 .addDrawerItems(
                         schedule_button.withIcon(FontAwesome.Icon.faw_calendar),
                         grade_button.withIcon(FontAwesome.Icon.faw_thumbs_up),
+                        attendances_button.withIcon(FontAwesome.Icon.faw_calendar_times_o),
+                        check_button.withIcon(FontAwesome.Icon.faw_qrcode),
+                        feedback_button.withIcon(FontAwesome.Icon.faw_graduation_cap),
                         new DividerDrawerItem(),
                         share_button.withIcon(FontAwesome.Icon.faw_share_alt),
                         rate_button.withIcon(FontAwesome.Icon.faw_star),
-                        feedback_button.withIcon(FontAwesome.Icon.faw_envelope),
                         settings_button.withIcon(FontAwesome.Icon.faw_cog),
                         logout_button.withIcon(FontAwesome.Icon.faw_power_off)
                 )
@@ -102,6 +106,15 @@ public class DrawerMenu {
                         if (drawerItem == grade_button) {
                             Intent intent = new Intent(activity, com.whiteshadow.studentlife.grades.GradeActivity.class);
                             activity.startActivity(intent);
+                        }
+                        if (drawerItem == attendances_button) {
+
+                        }
+                        if (drawerItem == check_button) {
+
+                        }
+                        if (drawerItem == feedback_button) {
+
                         }
                         if (drawerItem == share_button) {
                             Intent sendIntent = new Intent();
@@ -124,9 +137,6 @@ public class DrawerMenu {
                             }
                         }
                         if (drawerItem == settings_button) {
-
-                        }
-                        if (drawerItem == feedback_button) {
 
                         }
                         else if (drawerItem == logout_button) {

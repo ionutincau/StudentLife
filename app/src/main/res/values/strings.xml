@@ -6,9 +6,11 @@
 
     <string name="login_activity_title">Login</string>
     <string name="main_activity_title">Student Life</string>
+    <string name="drawer_attendances">Attendances</string>
+    <string name="drawer_check">Check In</string>
+    <string name="drawer_feedback">Feedback</string>
     <string name="drawer_share">Share</string>
     <string name="rate_button">Rate</string>
-    <string name="drawer_feedback">Send Feedback</string>
     <string name="drawer_settings">Settings</string>
     <string name="drawer_logout">Log out</string>
 
