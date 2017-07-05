@@ -6,4 +6,5 @@
     <color name="colorWhite">#ffffff</color>
     <color name="colorGood">#2ecc71</color>
     <color name="colorBad">@color/md_deep_orange_700</color>
+    <color name="colorBackground">#96454545</color>
 </resources>

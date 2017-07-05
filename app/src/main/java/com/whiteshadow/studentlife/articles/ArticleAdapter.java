@@ -1,7 +1,8 @@
-package com.whiteshadow.studentlife;
+package com.whiteshadow.studentlife.articles;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -14,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.whiteshadow.studentlife.R;
 import com.whiteshadow.studentlife.domain.Article;
 
 import java.util.List;
@@ -41,12 +43,11 @@ public class ArticleAdapter extends ArrayAdapter {
     public ArticleAdapter(Context context, int resource, List<Article> articleList) {
         super(context, resource, articleList);
         this.activity = (Activity) context;
-        Log.e("Main fragment", "constructor");
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Article article = (Article) getItem(position);
+        final Article article = (Article) getItem(position);
         View view = convertView;
         ArticleAdapter.ViewHolder holder;
 
@@ -54,10 +55,20 @@ public class ArticleAdapter extends ArrayAdapter {
             view = LayoutInflater.from(getContext()).inflate(R.layout.article_item, parent, false);
             holder = new ArticleAdapter.ViewHolder(view);
             view.setTag(holder);
+
         }
         else {
             holder = (ArticleAdapter.ViewHolder) view.getTag();
         }
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, com.whiteshadow.studentlife.articles.ArticleActivity.class);
+                intent.putExtra("article", article);
+                activity.startActivity(intent);
+            }
+        });
 
         loadArticleImage(activity, article.getUri(), holder.header_image);
         holder.title.setText(article.getTitle());

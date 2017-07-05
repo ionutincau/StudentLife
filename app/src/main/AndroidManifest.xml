@@ -50,6 +50,11 @@
             android:theme="@style/ActivityTheme">
         </activity>
         <activity
+            android:name=".articles.ArticleActivity"
+            android:label="@string/article_activity_title"
+            android:theme="@style/ActivityTheme">
+        </activity>
+        <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />

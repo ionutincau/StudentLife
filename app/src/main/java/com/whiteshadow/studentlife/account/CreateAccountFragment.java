@@ -13,12 +13,11 @@ import android.widget.Toast;
 
 import com.facebook.Profile;
 import com.whiteshadow.studentlife.App;
-import com.whiteshadow.studentlife.ArticleProvider;
+import com.whiteshadow.studentlife.articles.ArticleProvider;
 import com.whiteshadow.studentlife.MainActivity;
 import com.whiteshadow.studentlife.R;
 import com.whiteshadow.studentlife.domain.ArticleDao;
 import com.whiteshadow.studentlife.domain.DaoSession;
-import com.whiteshadow.studentlife.domain.Grade;
 import com.whiteshadow.studentlife.domain.GradeDao;
 import com.whiteshadow.studentlife.domain.ScheduleDao;
 import com.whiteshadow.studentlife.domain.Student;

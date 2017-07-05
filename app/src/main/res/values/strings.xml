@@ -41,4 +41,6 @@
     <string name="four">4</string>
     <string name="five">5</string>
     <string name="six">6</string>
+
+    <string name="article_activity_title">Article</string>
 </resources>
